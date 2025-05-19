@@ -1,0 +1,1 @@
+console.log("Bangalore Projectors site loaded.");
