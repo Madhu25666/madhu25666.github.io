@@ -8,7 +8,13 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
+  // Global config
   gtag('config', 'AW-17107698105');
+
+  // Phone conversion config (AFTER global config)
+  gtag('config', 'AW-17107698105/BOxeCMiRwcwaELmDy90_', {
+    'phone_conversion_number': '9353458276'
+  });
 </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -66,12 +72,24 @@
     <h2 class="text-2xl font-semibold mb-4">Perfect for Events, Classes, Movies, Meetings</h2>
     <p class="mb-6 max-w-xl mx-auto">Short-throw Optoma W318ST projectors | HD quality | Reliable service | Bangalore only</p>
     
-    <a href="https://wa.me/919353458276" target="_blank" class="bg-white-600 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-green-700 transition inline-flex items-center space-x-3">
+    <a 
+  href="https://wa.me/919353458276" 
+  target="_blank" 
+  class="bg-white-600 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-green-700 transition inline-flex items-center space-x-3"
+  onclick="gtag('event', 'conversion', {'send_to': 'AW-17107698105/BOxeCMiRwcwaELmDy90_'});"
+>
   <img src="./images/whatsapp.png" alt="WhatsApp" class="w-5 h-5">
   <span>Chat on WhatsApp</span>
 </a>
+
     <br><br>
-    <p>📞 Call 9353458276</p>
+
+
+    <a 
+  href="tel:9353458276" 
+  onclick="gtag('event', 'conversion', {'send_to': 'AW-17107698105/BOxeCMiRwcwaELmDy90_'});">
+  📞 Call 9353458276
+  </a>
   </section>
 
   <!-- Features -->
@@ -151,7 +169,11 @@
     });
   </script>
 
-  <a href="https://wa.me/919353458276" target="_blank" class="fixed bottom-4 right-4 z-50">
+  <a 
+  href="https://wa.me/919353458276" 
+  target="_blank" 
+  class="fixed bottom-4 right-4 z-50"
+  onclick="gtag('event', 'conversion', {'send_to': 'AW-17107698105/BOxeCMiRwcwaELmDy90_'});">
   <img src="./images/whatsapp.png" alt="WhatsApp Chat" class="w-12 h-12 shadow-lg hover:scale-110 transition-transform duration-200">
 </a>
 
