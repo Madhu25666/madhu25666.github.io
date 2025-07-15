@@ -1,4 +1,4 @@
-console.log("Bangalore Projectors site loaded.");
+console.log("Bangalore Projectors site loaded. (Updated with Comments)");
 
 
 // Add this code inside your js/scripts.js file
@@ -6,10 +6,12 @@ console.log("Bangalore Projectors site loaded.");
 // It's crucial this code runs AFTER your form HTML has loaded
 
 document.addEventListener('DOMContentLoaded', function() {
+     console.log("DOMContentLoaded event fired. Attempting to find contact form.");
     const contactForm = document.getElementById('contactForm');
-    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const submitButton = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
 
     if (contactForm && submitButton) {
+        console.log("Contact form and submit button found. Attaching event listener."); 
         contactForm.addEventListener('submit', async function(event) {
             // Prevent the default form submission (which would send to Formspree directly)
             event.preventDefault();
@@ -18,8 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.disabled = true;
             submitButton.textContent = 'Sending...';
 
+            console.log("Form submission disabled, sending state active.");
             const formData = new FormData(contactForm);
-
+            
             try {
                 // Send form data to Formspree using fetch API
                 const response = await fetch(contactForm.action, {
@@ -33,13 +36,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (response.ok) {
                     // Form submitted successfully!
                     console.log('Formspree submission successful!');
-
+                    console.log('Attempting to fire Google Ads conversion event...');
                     // --- FIRE YOUR GOOGLE ADS CONVERSION HERE ---
                     // REPLACE 'AW-17107698105/ABCDEF123XYZabc-' with your ACTUAL new Form Submission Conversion Label
                     gtag('event', 'conversion', {
                         'send_to': 'AW-17107698105/9DyvCJ2M0e8aELmDy90_' // !! IMPORTANT: Update this with your new conversion label from Step 2 !!
                     });
-
+                    console.log('Google Ads conversion event fired for form submission!');
                     // Update UI for success
                     submitButton.textContent = 'Inquiry Sent! 🎉';
                     submitButton.classList.remove('bg-blue-700', 'hover:bg-blue-800');
@@ -73,5 +76,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 // For success, you might not want to re-enable or change text back
             }
         });
+    }else{
+        console.error("ERROR: Contact form with ID 'contactForm' or its submit button not found!"); // Logs if form elements are missing
+    }
     }
 });
