@@ -79,5 +79,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }else{
         console.error("ERROR: Contact form with ID 'contactForm' or its submit button not found!"); // Logs if form elements are missing
     }
-    }
 });
