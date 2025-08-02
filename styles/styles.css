@@ -1,52 +1,4 @@
-body {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    font-family: Arial, sans-serif;
-    padding: 2rem;
-    background: #f0f0f0;
-  }
-  .swiper {
-    width: 90%;
-    max-width: 800px;
-    margin: auto;
-    padding-bottom: 50px; /* space for pagination */
-  }
-  .swiper-slide img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  }
-
-  .imperial-script-regular {
-    font-family: "Imperial Script", cursive;
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  .fancy-heading {
-    font-size: 2.5rem;        /* Adjust for size */
-    line-height: 1.2;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* soft drop shadow */
-    color: #fff;
-    animation: fadeIn 1.2s ease-out forwards;
-    opacity: 0;
-  }
-
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
-  }
-
-
-
-
-
-
+/* Smooth scrolling and global base */
 body {
   scroll-behavior: smooth;
   font-family: 'Poppins', sans-serif;
@@ -58,17 +10,17 @@ body {
 /* Swiper Carousel */
 .swiper {
   width: 90%;
-  max-width: 1000px;
+  max-width: 800px;
   margin: auto;
-  padding-bottom: 50px;
+  padding-bottom: 50px; /* space for pagination */
 }
 
 .swiper-slide img {
   width: 100%;
-  height: 180px;
+  height: 160px;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
 }
 
@@ -76,27 +28,22 @@ body {
   transform: scale(1.03);
 }
 
-/* Fancy Heading */
+/* Imperial script font */
 .imperial-script-regular {
   font-family: "Imperial Script", cursive;
   font-weight: 400;
   font-style: normal;
 }
 
+/* Fancy heading animation and style */
 .fancy-heading {
   font-size: 2.5rem;
   line-height: 1.2;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   color: #fff;
   animation: fadeIn 1.2s ease-out forwards;
   opacity: 0;
   letter-spacing: 0.5px;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
 }
 
 @media (min-width: 640px) {
@@ -105,48 +52,8 @@ body {
   }
 }
 
-/* Buttons */
-a.bg-white-600 {
-  background-color: #25D366;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 9999px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-a.bg-white-600:hover {
-  background-color: #128C7E;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Contact Form */
-form input,
-form button {
-  transition: all 0.3s ease;
-}
-
-form input:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
-  outline: none;
-}
-
-form button:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* Footer links hover effect */
-footer a:hover {
-  color: #fff;
-  text-decoration: underline;
-}
-
-
-  @media (min-width: 640px) {
-    .fancy-heading {
-      font-size: 3.5rem;
-    }
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
+}
